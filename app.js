@@ -25,6 +25,15 @@ app.use(express.urlencoded({ extended: true })); // body-parser 기능
 app.use(cookieParser());
 app.use(localMiddleware);
 
+// video 재생 문제 해결 미들웨어
+app.use(function (req, res, next) {
+  res.setHeader(
+    "Content-Security-Policy",
+    "script-src 'self' https://archive.org"
+  );
+  return next();
+});
+
 // route
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
