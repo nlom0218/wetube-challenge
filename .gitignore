@@ -117,3 +117,6 @@ dist
 
 package-lock.json
 .gitattributes
+uploads
+static
+build

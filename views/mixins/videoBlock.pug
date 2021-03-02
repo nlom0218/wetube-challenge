@@ -1,6 +1,0 @@
-mixin videoBlock(video={})
-    .videoBlock
-        video.videoBlock__thumbanil(src=video.videoFile, controls=true)
-        a(href=`/videos${routes.videoDetail(video.id)}`)
-            h4.videoBlock__title=video.title
-        h6.videoBlock__views=video.views
